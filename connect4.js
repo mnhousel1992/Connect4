@@ -5,8 +5,12 @@
  * board fills (tie)
  */
 
-const WIDTH = 7;
-const HEIGHT = 6;
+const startGame = document.getElementById("startGame");
+startGame.addEventListener("submit", beginGame);
+let WIDTH = 7;
+let HEIGHT = 6;
+let player1 = document.getElementById("p1");
+let player2 = document.getElementById("p2");
 
 let currPlayer = 1; // active player: 1 or 2
 const board = []; // array of rows, each row is array of cells  (board[y][x])
@@ -14,6 +18,25 @@ const board = []; // array of rows, each row is array of cells  (board[y][x])
 /** makeBoard: create in-JS board structure:
  *    board = array of rows, each row is array of cells  (board[y][x])
  */
+
+
+function beginGame(evt){
+  evt.preventDefault();
+  const widthInput = document.getElementById("boardWidthInput");
+  const heightInput = document.getElementById("boardHeightInput");
+
+  WIDTH = widthInput.value;
+  HEIGHT = heightInput.value;
+
+  if (!document.getElementById("column-top")){
+    makeBoard();
+    makeHtmlBoard();
+  }
+}
+
+function restartGame(e){
+  window.location.reload();
+}
 
 function makeBoard() {
   for(let y = 0; y < HEIGHT; y++){
@@ -50,6 +73,12 @@ function makeHtmlBoard() {
     }
     htmlBoard.append(row);
   }
+  const restartBtn = document.createElement("button");
+  const gameDiv = document.getElementById("game");
+  restartBtn.setAttribute("id", "restartBtn");
+  restartBtn.innerText = "Restart";
+  restartBtn.addEventListener("click", restartGame);
+  gameDiv.append(restartBtn);
 }
 
 /** findSpotForCol: given column x, return top empty y (null if filled) */
@@ -114,6 +143,14 @@ function handleClick(evt) {
 
   // switch players
   currPlayer = currPlayer === 1 ? 2 : 1;
+  
+  if(currPlayer === 1){
+    player1.classList.add("currentPlayer");
+    player2.classList.remove("currentPlayer");
+  }else{
+    player2.classList.add("currentPlayer")
+    player1.classList.remove("currentPlayer")
+  }
 }
 
 /** checkForWin: check board cell-by-cell for "does a win start here?" */
@@ -150,5 +187,3 @@ function checkForWin() {
   }
 }
 
-makeBoard();
-makeHtmlBoard();

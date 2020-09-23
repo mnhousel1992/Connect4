@@ -6,6 +6,55 @@
   border: solid 1px #666;
 }
 
+h1 {
+  text-align: center;
+}
+
+.player-intro {
+  width: 250px;
+  margin: 5px auto;
+  display: flex;
+  align-items: center;
+}
+
+.introPiece { 
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-left: 20px;
+}
+
+#p1 {
+  background-color: red;
+}
+
+#p2 {
+  background-color: black;
+}
+
+#board {
+  margin: 0 auto;
+}
+
+form {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  text-align: center;
+}
+
+#restartBtn {
+  margin: 5px auto;
+  width: 60px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.currentPlayer {
+  border: solid 5px cyan;
+}
+
 /* pieces are div within game table cells: draw as colored circles */
 
 .piece {

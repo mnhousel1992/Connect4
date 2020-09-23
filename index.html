@@ -5,7 +5,20 @@
 </head>
 <body>
 
+<h1>Connect Four</h1>
+
 <div id="game">
+  <form action="" id="startGame">
+    <label for="">Board Width: <input type="number" name="" id="boardWidthInput" value="7"></label>
+    <label for="">Board Height: <input type="number" name="" id="boardHeightInput" value="6"></label>
+    <button type="submit">Start Game</button>
+  </form>
+  <div class="player-intro">
+    <div id="p1" class="introPiece currentPlayer"></div>
+    <div class="introPlayer">Player1</div>
+    <div id="p2" class="introPiece"></div>
+    <div class="introPlayer">Player2</div>
+  </div>
   <table id="board"></table>
 </div>
 
