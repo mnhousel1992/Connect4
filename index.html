@@ -2,17 +2,54 @@
 <head>
   <title>Connect 4</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="mySiteTheme.css">
   <link href="connect4.css" rel="stylesheet">
 </head>
-<body class = "bg-info">
+<body class = "bg-success pt-5">
 
-<h1>Connect Four</h1>
+  <div class="container">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <a
+      class="navbar-brand"
+      href="https://mnhousel1992.github.io/MichaelHousel"
+      >Michael Housel</a
+    >
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-<div id="game" class="container-fluid text-center">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a
+            class="nav-link"
+            href="https://mnhousel1992.github.io/MichaelHousel"
+            >Home <span class="sr-only">(current)</span></a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://mnhousel1992.github.io/Connect4"
+            >Connect Four</a
+          >
+        </li>
+    </div>
+      </nav>
+    </div>
+
+<div id="game" class="container-fluid text-center pt-4">
+  <h1 class="font-weight-bold">Connect Four</h1>
   <form action="" id="startGame">
-    <label for="">Board Width: <input type="number" class = "border rounded" name="" id="boardWidthInput" value="7" max="25" min="4"></label>
-    <label for="">Board Height: <input type="number" class = "border rounded" name="" id="boardHeightInput" value="6" max="25" min="4"></label>
-    <button type="submit" class="btn btn-dark rounded-pill">Start Game</button>
+    <label for="boardWidthInput" class="font-weight-bold">Board Width: <input type="number" class = "border rounded bg-warning" name="" id="boardWidthInput" value="7" max="25" min="4"></label>
+    <label for="boardHeightInput" class="font-weight-bold">Board Height: <input type="number" class = "border rounded bg-warning" name="" id="boardHeightInput" value="6" max="25" min="4"></label>
+    <button type="submit" class="btn btn-secondary rounded-pill">Start Game</button>
   </form>
   <div class="player-intro">
     <div id="p1" class="introPiece currentPlayer"></div>
