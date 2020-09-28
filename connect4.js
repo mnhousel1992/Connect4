@@ -76,6 +76,7 @@ function makeHtmlBoard() {
 	const restartBtn = document.createElement("button");
 	const gameDiv = document.getElementById("game");
 	restartBtn.setAttribute("id", "restartBtn");
+	restartBtn.classList.add("btn", "btn-danger", "rounded-pill");
 	restartBtn.innerText = "Restart";
 	restartBtn.addEventListener("click", restartGame);
 	gameDiv.append(restartBtn);
@@ -105,6 +106,7 @@ function placeInTable(y, x) {
 		player = "p2";
 	}
 	newDiv.className = "piece " + player;
+	newDiv.classList.add("border", "border-dark", "rounded-circle");
 	cell.append(newDiv);
 }
 
